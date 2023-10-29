@@ -1,0 +1,42 @@
+<html xmlns:th="http:www.thymeLeaf.org">
+ <head style="background-image: url(panner.jpg);">
+   <meta name="viewport" content="width=50%, initial-scale=1">
+     <title>Contact Form</title>
+     <link rel="stylesheet" href="ss.css">
+     <style>
+         body{
+            background-image: url(i1.avif);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+         }
+     </style>
+  </head>
+<body><center>
+    <br><h1> SEND ENQUIRY</h1><br>
+          <form th:action="@{success}"method="post"th:object="${frm}">
+        Name: <input type="text" th:field="*{name}"/><br>
+        Email: <input type="text" th:field="*{email}"/><br>
+        Password: <input type="password" th:field="*{password}"/><br><br>
+        Gender: <input type="radio" th:field="*{g1}" value="Male">Male &nbsp;
+        <input type="radio" th:field="*{g1}" value="Female">Female &nbsp; <br><br>
+        <label>Qurie Product:</label>
+        <input type="checkbox" th:field="*{veg}" value="curd">Curd &nbsp;
+        <input type="checkbox" th:field="*{veg}" value="Ghee">Ghee &nbsp;
+        <input type="checkbox" th:field="*{veg}" value="Butter">Butter &nbsp;
+        <input type="checkbox" th:field="*{veg}" value="panner">Panner &nbsp;<br>
+        <br> Quries: <br> <textarea cols="30" th:field="*{contact}" rows="5"></textarea> <br>
+        <label>Location: </label>
+        <input list="loc" th:field="*{location}">
+        <datalist id="loc">
+            <option value="kmp"></option>
+            <option value="erode"></option>
+            <option value="perudhurai"></option>
+            <option value="cbe"></option>
+            <option value="salem"></option>
+        </datalist> <br><br>
+        <button type="submit">Submit</button>
+    </form>
+   </center>
+</body>
+</html>
